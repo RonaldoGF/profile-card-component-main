@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Profile card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap');
+
+    :root{--Dark-cyan: hsl(185, 75%, 39%);
+    --Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+    --Dark-grayish-blue: hsl(227, 10%, 46%);
+    --Dark-gray: hsl(0, 0%, 59%)
+  }
+  body{
+    padding: 0;
+    margin: 0;
+    background-color: var(--Dark-cyan);
+    background-image: url(images/bg-pattern-top.svg), url(images/bg-pattern-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: right 51vw bottom 20vh, left 45vw top 50vh;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 18px;
+  }
+  .card-container{
+    margin: 170px auto 50px;
+    width: 330px;
+    height: 380px;
+    border-radius: 10px;
+    /*Con esta propiedad indico que todo lo que esté fuera 
+    del borde se esconda detrás del mismo */
+    overflow: hidden;
+    position: relative;
+  }
+  .bubbles{
+    background: url(images/bg-pattern-card.svg);
+    height: 140px;
+  }
+  .photo{
+    /*Se puede tener control sobre una imagen siempre y cuando
+    la posicion sea absoluta y la del contenedor relativa */
+    position: absolute;
+    top: 87px;
+    /*Es recomendable poner en porcentaje ya que al poner en px 
+    es un valor fijo, con % se adecua al tamaño del contenedor */
+    left: 35%;
+    border: 5px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 96px;
+  }
+  
+  .personal-data-container{
+    background-color: white;
+    height: 150px;
+    padding: 75px;
+    /*Sirve para que se mantenga su tamaño acorde 
+    al tamaño del borde */
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .name{
+    font-weight: 700;
+    color: var(--Very-dark-desaturated-blue);
+  }
+  .age, .city{
+    color: var(--Dark-gray);
+  }
+  .city{
+    margin-top: 10px;
+    font-size: 0.8em;
+  }
+  .stats-container{
+    background-color: white;
+    border-top: 1px solid var(--Dark-gray);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;    
+  }
+  .stadistics{
+    text-align: center;
+  }
+  .quantity{
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--Very-dark-desaturated-blue);
+  }
+  .units{
+    font-size: 0.6em;
+    color: var(--Dark-gray);
+    letter-spacing: 2px;
+  }
+  @media screen and (min-width: 1440px){
+    .card-container{
+      width: 350px;
+    }
+  }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="bubbles"></div>
+    <div class="photo">
+      <img src="./images/image-victor.jpg" alt="Personal photo">
+    </div>
+    <div class="personal-data-container">
+      <span class="name">Victor Crest</span>
+      <span class="age">26</span>
+      <div class="city">London</div>
+    </div>
+
+    <div class="stats-container">
+      <div class="stadistics">
+        <div class="quantity">80K</div>
+        <div class="units">Followers</div>
+      </div>
+
+      <div class="stadistics">
+        <div class="quantity">803K</div>
+        <div class="units"> Likes</div>
+      </div>
+
+      <div class="stadistics">
+        <div class="quantity">1.4K</div>
+        <div class="units">Photos</div>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Ronald Gallego</a>.
+  </div>
+</body>
+</html>
